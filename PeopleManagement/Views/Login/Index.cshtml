@@ -1,0 +1,17 @@
+﻿@model PeopleManagement.Models.UserViewModel
+@{
+    Layout = null;
+}
+<link href="~/css/login.css" rel="stylesheet" />
+<section>
+    <form action="/Login/Test" method="post">
+    <h1>Autentication</h1>
+    <input type="text" name="Email" value="@Model.Email" placeholder="Username/Email" />
+    <input type="password" name="Password" value="@Model.Password" placeholder="Password"/>
+    <a href="#">Forgot Password?</a>
+
+
+    <button type="submit">Login</button>
+    </form>
+    <label>If you dont have an account <a href="#"> Click Here</a> </label>
+</section>
