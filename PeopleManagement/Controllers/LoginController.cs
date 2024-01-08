@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PeopleManagement.Models;
+using PeopleManagement.Models.Validator;
 
 namespace PeopleManagement.Controllers
 {
@@ -7,7 +8,9 @@ namespace PeopleManagement.Controllers
     {
         public IActionResult Index()
         {
+
             UserViewModel user = new UserViewModel();
+            UserValidator validationRules = new UserValidator();
             return View("Index",user);
         }
         [HttpPost]
