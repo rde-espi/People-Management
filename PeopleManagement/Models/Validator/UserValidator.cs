@@ -6,9 +6,9 @@ namespace PeopleManagement.Models.Validator
     {
         public UserValidator() 
         {
-            RuleFor(user => user.Email).NotNull();
-            //RuleFor(user => user.Username).NotNull();
-            RuleFor(user => user.Password).NotNull();
+            RuleFor(user => user.Email).NotNull().WithMessage("Email can not be Empty =D");
+            RuleFor(user => user.Email).EmailAddress().WithMessage("Have to be a valid email");
+            RuleFor(user => user.Password).NotNull().WithMessage("Pass is mandatory");
 
         }
     }
