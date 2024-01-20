@@ -1,16 +1,29 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Common;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 namespace APIs.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Login(string username, string password)
+        //public IActionResult Login()
+        //{
+        //    return Ok();
+        //}
+       
+        [HttpPost]
+        public IActionResult Login(UserModel user)
         {
-            return Ok(new {Response = "Esta Logado"});
+            if (user.Password == "123")
+            { 
+                return Ok(new { Response = "OK" }); 
+            }
+            else
+            {
+                return Ok(new { Response = "Error" });
+            }
+            
         }
     }
 }
