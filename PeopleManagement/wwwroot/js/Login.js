@@ -38,7 +38,7 @@ $('form').on('submit', function (event) {
         data: JSON.stringify(formData),
         url: "https://localhost:44371/api/user",
         success: function (result) {
-            if (result.response = 'OK')
+            if (result.response == 'OK')
                 alert("Logado")
             else {
                 alert("invalid credencials")

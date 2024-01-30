@@ -29,5 +29,9 @@ namespace PeopleManagement.Controllers
             user.Email = "email enviaDO";
             return View("Index", user);
         }
+        public IActionResult SignUp()
+        {
+            return View();
+        }
     }
 }
