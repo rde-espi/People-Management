@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
+using PeopleManagement.Models;
 
-namespace PeopleManagement.Models.Validator
+namespace PeopleManagement.Validator
 {
     public class UserValidator : AbstractValidator<UserViewModel>
     {
-        public UserValidator() 
+        public UserValidator()
         {
             RuleFor(user => user.Email).NotNull().WithMessage("Email can not be Empty =D");
             RuleFor(user => user.Email).EmailAddress().WithMessage("Have to be a valid email");

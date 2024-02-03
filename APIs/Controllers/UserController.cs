@@ -1,6 +1,9 @@
-﻿using Common;
+﻿using APIs.Validator;
+using Common;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 namespace APIs.Controllers
 {
     [Route("api/[controller]")]
@@ -27,8 +30,19 @@ namespace APIs.Controllers
         }
 
         [HttpPost("Create")]
-        public IActionResult SignUp(UserModel user)
+        public IActionResult Create(UserModel user)
         {
+            
+            UserValidator validator = new UserValidator();
+            ValidationResult results = validator.Validate(user);
+            if (!results.IsValid)
+            {
+                foreach (var failure in results.Errors)
+                {
+                    Console.WriteLine("Property " + failure.PropertyName + "Failed Validation. Error was: " + failure.ErrorMessage);
+                }
+            }
+
             if (user.Password == "123")
             {
                 return Ok(new { Response = "OK" });
@@ -38,6 +52,12 @@ namespace APIs.Controllers
                 return Ok(new { Response = "Error" });
             }
 
+        }
+
+        [HttpPost("forgot")]
+        public IActionResult Forgot([FromBody]string email)
+        {
+            return Ok(new { Response = "OK" });
         }
     }
 }

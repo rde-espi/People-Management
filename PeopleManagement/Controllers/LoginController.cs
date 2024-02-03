@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using PeopleManagement.Models;
-using PeopleManagement.Models.Validator;
+using PeopleManagement.Validator;
 using System;
 
 namespace PeopleManagement.Controllers
@@ -26,10 +26,15 @@ namespace PeopleManagement.Controllers
         [HttpPost]
         public IActionResult Test(UserViewModel user)
         {
-            user.Email = "email enviaDO";
+            user.Email = "email enviado";
             return View("Index", user);
         }
         public IActionResult SignUp()
+        {
+            return View();
+        }
+
+        public IActionResult Forgot()
         {
             return View();
         }

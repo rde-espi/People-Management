@@ -7,11 +7,14 @@
 <section>
     <h1>Create your Account</h1>
     <form>
-        <input  id="username" placeholder="Username" />
-        <input type="email" id="email" placeholder="Email"/>
-        <input type="password" id="password" placeholder="Password"/>
-        <input type="password" id="confirmPassword" placeholder="Confirm Password"/>
-        <button>Criar</button>
+        <input required id="username" placeholder="Username" />
+        <input required type="email" id="email" placeholder="Email"/>
+        <input required type="password" id="password" placeholder="Password"/>
+        <input required type="password" id="confirmPassword" placeholder="Confirm Password"/>
+        <div class="error">
+            <span hidden> passwords does not correspond</span>
+        </div>
+        <button type="submit">Criar</button>
     </form>
 </section>
 
