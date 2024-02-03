@@ -38,5 +38,10 @@ namespace PeopleManagement.Controllers
         {
             return View();
         }
+
+        public IActionResult Reset()
+        {
+            return View();
+        }
     }
 }

@@ -59,5 +59,11 @@ namespace APIs.Controllers
         {
             return Ok(new { Response = "OK" });
         }
+
+        [HttpPost("reset")]
+        public IActionResult Reset(UserModel user)
+        {
+            return Ok(new { Response = "OK" });
+        }
     }
 }
